@@ -1,4 +1,4 @@
-*/
+/*
 
 # Define provider
 provider "google" {
@@ -52,5 +52,6 @@ resource "google_cloud_workflows_workflow" "workflow" {
         EOF
     }
 }
+
 
 */
