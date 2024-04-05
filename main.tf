@@ -10,7 +10,7 @@ provider "google" {
 resource "google_cloud_scheduler_job" "scheduler_job" {
     name        = "my-scheduler-job"
     description = "My Cloud Scheduler Job"
-    #schedule    = "*/5 * * * *"
+    schedule    = "cron formatted schedule"
     time_zone   = "America/Los_Angeles"
 
     http_target {
