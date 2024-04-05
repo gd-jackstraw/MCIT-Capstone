@@ -1,3 +1,5 @@
+*/
+
 # Define provider
 provider "google" {
     project = "<your-project-id>"
@@ -50,3 +52,5 @@ resource "google_cloud_workflows_workflow" "workflow" {
         EOF
     }
 }
+
+/*
