@@ -6,7 +6,6 @@ module "bucket" {
   project_id = "mcit-capstone-dev"
   location   = "us-east1"
 
-  }]
 }
 
 /*
