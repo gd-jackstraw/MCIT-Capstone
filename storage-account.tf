@@ -5,9 +5,7 @@ module "bucket" {
   name       = "dev-test-bucket12864"
   project_id = "mcit-capstone-dev"
   location   = "us-east1"
-  iam_members = [{
-    role   = "roles/storage.objectViewer"
-    member = "terraform-auth@mcit-capstone-dev.iam.gserviceaccount.com"
+
   }]
 }
 
