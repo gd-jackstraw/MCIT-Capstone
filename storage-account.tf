@@ -11,6 +11,7 @@ module "bucket" {
   }]
 }
 
+/*
 resource "google_storage_bucket_iam_member" "members" {
   for_each = {
     for m in var.iam_members : "${m.role} ${m.member}" => m
@@ -19,3 +20,4 @@ resource "google_storage_bucket_iam_member" "members" {
   role   = each.value.role
   member = each.value.member
 }
+*/
