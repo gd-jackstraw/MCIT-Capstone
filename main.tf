@@ -87,11 +87,3 @@ resource "google_storage_bucket" "bucket" {
     }
   }
 }
-
-resource "google_storage_bucket_iam_member" "members" {
- 
-  bucket = google_storage_bucket.bucket.name
-  role   = "roles/storage.editor"
-  member = "terraform-auth@mcit-capstone-dev.iam.gserviceaccount.com"
-
-}
