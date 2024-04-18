@@ -91,8 +91,7 @@ resource "google_storage_bucket" "bucket" {
 resource "google_storage_bucket_iam_member" "members" {
  
   bucket = google_storage_bucket.bucket.name
-  iam_members = [{
-    role   = "roles/storage.objectViewer"
-    member = "terraform-auth@mcit-capstone-dev.iam.gserviceaccount.com"
-}]
+  role   = "roles/storage.objectViewer"
+  member = "terraform-auth@mcit-capstone-dev.iam.gserviceaccount.com"
+
 }
