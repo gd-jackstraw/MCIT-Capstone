@@ -1,3 +1,4 @@
+/*
 module "bucket" {
   source  = "terraform-google-modules/cloud-storage/google//modules/simple_bucket"
   version = "~> 5.0"
@@ -7,7 +8,7 @@ module "bucket" {
   location = "multi-region"
   
 }
-
+*/
 
 /*
 resource "google_storage_bucket_iam_member" "members" {
