@@ -4,7 +4,7 @@ module "bucket" {
 
   name       = "dev-test-bucket12864"
   project_id = "mcit-capstone-dev"
-  location = ["northamerica-northeast1", "northamerica-northeast2"]
+  location = "northamerica-northeast1"
   
 }
 
