@@ -8,7 +8,6 @@ module "bucket" {
   placement = [US-CENTRAL1, US-WEST1]
 }
 
-}
 
 /*
 resource "google_storage_bucket_iam_member" "members" {
