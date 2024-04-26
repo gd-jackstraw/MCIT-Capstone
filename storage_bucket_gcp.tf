@@ -15,9 +15,3 @@ resource "google_storage_bucket" "static" {
   ]
 }
 
-resource "google_storage_bucket_object" "static" {
-  name         = "OBJECT_NAME"
-  source       = "OBJECT_PATH"
-  content_type = "text/plain"
-  bucket       = google_storage_bucket.static.id
-}
