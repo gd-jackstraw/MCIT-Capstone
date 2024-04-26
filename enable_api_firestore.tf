@@ -9,7 +9,7 @@ resource "google_project_service" "firestore" {
 
 resource "google_storage_bucket" "static" {
   name         = "gcp_capstone"
-  location      = "us-central1"
+
   storage_class = "STANDARD"
   versioning {
     enabled = true
@@ -32,3 +32,20 @@ resource "google_kms_crypto_key" "terraform_state_bucket" {
   name     = "terraform-state-bucket-key"
   location = "us-central1"
 }
+
+
+resource "google_project" "project" {
+  name               = "mcit-capstone-prod"
+  project_id         = "mcit-capstone-prod"
+  billing_account    = "012345-6789ABCDEF0"
+  auto_create_network = true
+}
+
+resource "google_project_service" "firestore" {
+  project = google_project.project.project_id
+  service = "firestore.googleapis.com"
+
+  disable_on_destroy = false
+}
+
+# ... other resources ...
