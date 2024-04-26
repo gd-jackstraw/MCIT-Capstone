@@ -31,6 +31,4 @@ resource "google_workflow" "example" {
       }
     }
   ]#
-
-  YAML
 }
