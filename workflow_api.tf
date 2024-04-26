@@ -1,11 +1,3 @@
-
-
-resource "google_project_service" "workflows" {
-  service = "workflows.googleapis.com"
-  project = "mcit-capstone-prod"
-  disable_on_destroy = false
-}
-
 resource "google_workflow" "example" {
   name          = "example-workflow"
   description   = "Example workflow"
@@ -39,10 +31,6 @@ resource "google_workflow" "example" {
       }
     }
   ]
-}
 
-resource "google_service_account" "example" {
-  account_id   = "example-service-account"
-  display_name = "Example Service Account"
-  project      = "mcit-capstone-prod"
+  YAML
 }
