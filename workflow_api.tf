@@ -30,5 +30,7 @@ resource "google_workflow" "example" {
         message = "Goodbye, world!"
       }
     }
-  ]#
+  ]
+
+  YAML
 }
