@@ -1,6 +1,6 @@
 
 
-resource "google_storage_bucket" "static" {
+resource "google_storage_bucket" "static1" {
   name         = "gcp_capstone"
   location      = "us-central1"
   storage_class = "STANDARD"
