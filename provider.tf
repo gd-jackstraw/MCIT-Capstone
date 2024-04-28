@@ -6,7 +6,7 @@ terraform {
     }
   }
 }
-/* provider "google" {
+  provider "google" {
   project = "mcit-capstone-dev"
   region = "us-east1"
 }
@@ -36,4 +36,3 @@ resource "google_project_service" "compute_api" {
 provider "google-beta" {
 }
 
-*/
