@@ -28,7 +28,7 @@ resource "google_project_service" "scheduler" {
 }
 
 resource "google_project_service" "compute_api" {
-  project = google_project.project.project_id
+  project = "mcit-capstone-dev"
   service = "compute.googleapis.com"
 
   disable_on_destroy = false
