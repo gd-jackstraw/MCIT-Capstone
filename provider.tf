@@ -7,7 +7,7 @@ terraform {
   }
 }
 provider "google" {
-region = "us-east1"
+  region = "us-east1"
 }
 
 provider "google-beta" {
