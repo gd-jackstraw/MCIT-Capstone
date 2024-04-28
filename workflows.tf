@@ -29,7 +29,7 @@ module "cloud_workflow" {
       auth:
         type: OAuth2
       body:
-        outputUriPrefix: ${firestoreBackupBucket}
+        outputUriPrefix: $${firestoreBackupBucket}
     result: result
 - returnResult:
     return: $${result}
