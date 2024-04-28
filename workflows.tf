@@ -8,7 +8,7 @@
   workflow_trigger = {
     cloud_scheduler = {
       name                  = "workflow-job"
-#      cron                  = "*/3 * * * *"
+#      cron                 ## = "*/3 * * * *" ##
  #     time_zone             = "America/New_York"
   #    deadline              = "320s"
       service_account_email = "<svc_account>"
