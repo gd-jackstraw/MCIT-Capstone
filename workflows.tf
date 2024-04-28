@@ -17,19 +17,19 @@ module "cloud_workflow" {
   workflow_source       = <<-EOF
 - initialize:
     assign:
-      - project: ${sys.get_env("GOOGLE_CLOUD_PROJECT_ID")}
+      - project: $${sys.get_env("GOOGLE_CLOUD_PROJECT_ID")}
       - firestoreDatabaseId: (default)
       - firestoreBackupBucket: gs://dev-test-bucket12864
 - exportFirestoreDatabaseAll:
     call: http.post
     args:
-      url: ${"https://firestore.googleapis.com/v1/projects/"+project+"/databases/"+firestoreDatabaseId+":exportDocuments"}
+      url: $${"https://firestore.googleapis.com/v1/projects/"+project+"/databases/"+firestoreDatabaseId+":exportDocuments"}
       auth:
         type: OAuth2
       body:
         outputUriPrefix: ${firestoreBackupBucket}
     result: result
 - returnResult:
-    return: ${result}
+    return: $${result}
 EOF
 }
