@@ -22,6 +22,11 @@ resource "google_project_service" "workflow" {
     service = "workflow.googleapis.com"
 }
 
+resource "google_project_service" "scheduler" {
+    project = "mcit-capstone-dev"
+    service = "cloudscheduler.googleapis.com"
+}
+
 resource "google_project_service" "compute_api" {
   project = google_project.project.project_id
   service = "compute.googleapis.com"
