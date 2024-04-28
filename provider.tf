@@ -16,9 +16,9 @@ resource "google_project_service" "firestore" {
     service = "firestore.googleapis.com"
 }
 
-resource "google_project_service" "workflow" {
+resource "google_project_service" "workflows" {
     project = "mcit-capstone-dev"
-    service = "workflow.googleapis.com"
+    service = "workflows.googleapis.com"
 }
 
 resource "google_project_service" "scheduler" {
