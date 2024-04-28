@@ -70,6 +70,11 @@ variable "retention_policy" {
   default = null
 }
 
+variable "retention_period_seconds" {
+  description = "object retention period in seconds"
+  type = number
+}
+
 variable "custom_placement_config" {
   description = "Configuration of the bucket's custom location in a dual-region bucket setup. If the bucket is designated a single or multi-region, the variable are null."
   type = object({
