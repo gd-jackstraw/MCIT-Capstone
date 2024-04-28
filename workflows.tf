@@ -2,6 +2,8 @@ module "cloud_workflow" {
   source  = "GoogleCloudPlatform/cloud-workflows/google"
   version = "~> 0.1"
 
+  project_id = var.project_id
+
   workflow_name         = "wf-firestore-backup"
   region                = "us-east1"
   service_account_email = "terraform-auth@mcit-capstone-dev.iam.gserviceaccount.com"
