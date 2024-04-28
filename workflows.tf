@@ -1,4 +1,4 @@
-/* module "cloud_workflow" {
+module "cloud_workflow" {
   source  = "GoogleCloudPlatform/cloud-workflows/google"
   version = "~> 0.1"
 
@@ -33,5 +33,3 @@
     return: ${result}
 EOF
 }
-
-*/
