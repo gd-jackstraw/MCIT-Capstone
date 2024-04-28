@@ -4,32 +4,33 @@
 
   workflow_name         = "wf-firestore-backup"
   region                = "us-east1"
-  service_account_email = "<svc_account>"
+  service_account_email = "terraform-auth@mcit-capstone-dev.iam.gserviceaccount.com"
   workflow_trigger = {
     cloud_scheduler = {
       name                  = "workflow-job"
-      cron                 
+      cron                  = "0 0 * * *"
       time_zone             = "America/New_York"
       deadline              = "320s"
-      service_account_email = "<svc_account>"
+      service_account_email = "terraform-auth@mcit-capstone-dev.iam.gserviceaccount.com"
     }
   }
   workflow_source       = <<-EOF
-  - getCurrentTime:
-      call: http.get
-      args:
-          url: https://us-central1-workflowsample.cloudfunctions.net/datetime
-      result: CurrentDateTime
-  - readWikipedia:
-      call: http.get
-      args:
-          url: https://en.wikipedia.org/w/api.php
-          query:
-              action: opensearch
-              search: $${CurrentDateTime.body.dayOfTheWeek}
-      result: WikiResult
-  - returnOutput:
-      return: $${WikiResult.body[1]}
+- initialize:
+    assign:
+      - project: ${sys.get_env("GOOGLE_CLOUD_PROJECT_ID")}
+      - firestoreDatabaseId: (default)
+      - firestoreBackupBucket: gs://dev-test-bucket12864
+- exportFirestoreDatabaseAll:
+    call: http.post
+    args:
+      url: ${"https://firestore.googleapis.com/v1/projects/"+project+"/databases/"+firestoreDatabaseId+":exportDocuments"}
+      auth:
+        type: OAuth2
+      body:
+        outputUriPrefix: ${firestoreBackupBucket}
+    result: result
+- returnResult:
+    return: ${result}
 EOF
 }
 
