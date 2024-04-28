@@ -16,13 +16,9 @@ resource "google_storage_bucket" "bucket" {
     enabled = var.autoclass
   }
 
-  dynamic "retention_policy" {
-    for_each = var.retention_policy == null ? [] : [var.retention_policy]
-    content {
-      is_locked        = var.retention_policy.is_locked
-      retention_period = var.retention_policy.retention_period
-    }
-  }
+retention_policy {
+  retention_period = var.retention_period_seconds
+}
 
   dynamic "encryption" {
     for_each = var.encryption == null ? [] : [var.encryption]
