@@ -8,8 +8,6 @@ terraform {
 }
 provider "google" {
   project = "mcit-capstone-dev"
-  #credentials = file("<PATH_TO_YOUR_SERVICE_ACCOUNT_JSON>")
-  #credentials = file("<path_to_service_account_key_file>")
   region = "us-east1"
 }
 
