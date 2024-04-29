@@ -7,7 +7,7 @@ terraform {
   }
 }
 provider "google" {
-
+project = "mcit-capstone-prod"
 }
 
 provider "google-beta" {
