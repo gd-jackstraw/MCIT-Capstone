@@ -3,7 +3,7 @@ terraform {
     organization = "gd-jackstraw"
 
     workspaces {
-      name = "mcit-capstone-dev"
+      name = "mcit-capstone-prod"
     }
   }
 }
