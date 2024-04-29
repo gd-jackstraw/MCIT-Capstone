@@ -19,8 +19,7 @@ resource "google_storage_bucket" "bucket" {
 retention_policy {
   retention_period = var.retention_period_seconds
 }
-
-  dynamic "encryption" {
+/*  dynamic "encryption" {
     for_each = var.encryption == null ? [] : [var.encryption]
     content {
       default_kms_key_name = var.encryption.default_kms_key_name
@@ -83,3 +82,5 @@ retention_policy {
     }
   }
 }
+
+*/
