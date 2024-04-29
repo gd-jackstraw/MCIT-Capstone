@@ -7,7 +7,10 @@ terraform {
   }
 }
 provider "google" {
+
+  credentials = file("/path/to/service-account.json") 
 }
+
 
 provider "google-beta" {
 }
