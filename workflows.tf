@@ -17,7 +17,7 @@ module "cloud_workflow" {
     }
   }
   workflow_source       = <<-EOF
-- initialize:
+/* - initialize:
     assign:
       - project: $${sys.get_env("GOOGLE_CLOUD_PROJECT_ID")}
       - firestoreDatabaseId: (default)
@@ -34,4 +34,6 @@ module "cloud_workflow" {
 - returnResult:
     return: $${result}
 EOF
+
+*/
 }
