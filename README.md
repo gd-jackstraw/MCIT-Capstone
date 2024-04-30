@@ -24,9 +24,11 @@ The first step is to create a Project in Google Cloud to work in. We set up 3 pr
 
 All required GCP projects can be found here which can only be viewed if your account has been given the proper permissions.
 
+
 https://console.cloud.google.com/welcome?hl=en&project=mcit-capstone-dev 
 https://console.cloud.google.com/welcome?hl=en&project=mcit-capstone-qa 
 https://console.cloud.google.com/welcome?hl=en&project=mcit-capstone-prod
+
 
 Each project has a Service Account created specifically to authorize Terraform Cloud via an environment variable. You generate a key for each Service Account and use the following Cloudshell command to make it TF readable:
 
@@ -37,9 +39,13 @@ cat <project-id-randomstring.json> | tr -s '\n' ' '
 New Terraform Cloud workspaces were created pulling code from the github repo main branch as the "prod" branch + dev and qa branches used for the project.
 
 
+
 The output was then added to the associated HCP/Terraform cloud workspace as an Environment Variable tagged as "sensitive" - this environment variable is linked to the Service Account for the Google Cloud Project. The code uses this Service Account and its IAM binding roles to deploy the IAC.
 
+
 In order to grant the necessary permissions for the Service Account, roles need to be added to the IAM binding. These are the roles I found were required in order to allow Terraform Cloud/HCP to deploy:
+
+
 
 roles/workflows.invoker
 
@@ -59,12 +65,16 @@ roles/firestore.serviceAgent
 
 roles/compute.serviceAgent
 
+
+
 They are added via Cloudshell with the following command:
+
 
 gcloud projects add-iam-policy-binding \
 <PROJECT_ID> \
  --member='serviceAccount:<SERVICE_ACCOUNT_EMAIL>' \
  --role='roles/<ROLE>'
+
 
  This may be more permissions than required. A review of permissions granted may be in order to minimize excess permissions.
 
