@@ -42,13 +42,21 @@ The output was then added to the associated HCP/Terraform cloud workspace as an 
 In order to grant the necessary permissions for the Service Account, roles need to be added to the IAM binding. These are the roles I found were required in order to allow Terraform Cloud/HCP to deploy:
 
 roles/workflows.invoker
+
 roles/workflows.editor
+
 roles/storage.objectCreator
+
 roles/datastore.importExportAdmin
+
 roles/servicemanagement.quotaViewer
+
 roles/apigateway.admin
+
 roles/workflows.serviceAgent
+
 roles/firestore.serviceAgent
+
 roles/compute.serviceAgent
 
 They are added via Cloudshell with the following command:
