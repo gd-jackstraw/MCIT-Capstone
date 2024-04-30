@@ -6,7 +6,8 @@ This repo hosts the terraform code to deploy a storage backup solution to back u
 The design is based off the following diagram - created by fellow classmate Husni:
 
 
-(https://github.com/gd-jackstraw/MCIT-Capstone/assets/143850151/0ab56c6e-b20c-45c9-99ee-2c7df02c3456)
+![WhatsApp Image 2024-04-30 at 11 55 28_3d8be279](https://github.com/gd-jackstraw/MCIT-Capstone/assets/143850151/1124c35e-adbd-462e-b9b0-f73b30136264)
+
 
 
 The Firestore DB exists already in the Google Cloud project. The code enables the required APIs and creates a storage bucket with a set name, location, access policy and retention policy. 
