@@ -30,14 +30,14 @@ module "cloud_workflow" {
 
   workflow_name         = "wf-firestore-backup"
   region                = var.region
-  service_account_email = var.service_account_email
+  service_account_email = "terraform-auth@mcit-capstone-dev.iam.gserviceaccount.com"
   workflow_trigger = {
     cloud_scheduler = {
       name                  = "workflow-job"
       cron                  = "0 0 * * *"
       time_zone             = "America/New_York"
       deadline              = "320s"
-      service_account_email = var.service_account_email
+      service_account_email = "terraform-auth@mcit-capstone-dev.iam.gserviceaccount.com"
     }
   }
   workflow_source       = <<-EOF
