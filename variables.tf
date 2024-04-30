@@ -70,3 +70,11 @@ variable "public_access_prevention" {
   type        = string
   default     = "inherited"
 }
+
+variable "region" {
+  description = "region hosting the workflow"
+}
+
+variable "service_account_email" {
+  description = "Service account used to create the workflow"
+}
