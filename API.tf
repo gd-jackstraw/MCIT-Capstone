@@ -28,3 +28,8 @@ resource "google_project_service" "cloud_scheduler" {
   service = "cloudresourcemanager.googleapis.com"
 }
 */
+
+resource "google_project_service" "workflowexecutions" {
+  project = var.project_id
+  service = "workflowexecutions.googleapis.com"
+}
