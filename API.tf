@@ -14,6 +14,9 @@ resource "google_project_service" "compute_engine" {
 resource "google_project_service" "workflows" {
   project = var.project_id
   service = "workflows.googleapis.com"
+
+  disable_dependent_services=true
+
 }
 
 
@@ -28,8 +31,3 @@ resource "google_project_service" "cloud_scheduler" {
   service = "cloudresourcemanager.googleapis.com"
 }
 */
-
-resource "google_project_service" "workflowexecutions" {
-  project = var.project_id
-  service = "workflowexecutions.googleapis.com"
-}
