@@ -14,6 +14,8 @@ resource "google_project_service" "compute_engine" {
 resource "google_project_service" "workflows" {
   project = var.project_id
   service = "workflows.googleapis.com"
+
+   disable_on_destroy = false
 }
 
 # Enable Cloud Scheduler API
