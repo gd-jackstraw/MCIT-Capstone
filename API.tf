@@ -11,11 +11,11 @@ resource "google_project_service" "compute_engine" {
 }  
 
 # Enable Workflows API  
-/* resource "google_project_service" "workflows" {
+resource "google_project_service" "workflows" {
   project = var.project_id
   service = "workflows.googleapis.com"
 }
-*/
+
 
 # Enable Cloud Scheduler API
 resource "google_project_service" "cloud_scheduler" {
