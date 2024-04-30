@@ -75,7 +75,7 @@ variable "region" {
   description = "region hosting the workflow"
 }
 
-/* variable "service_account_email" {
+variable "service_account_email" {
   description = "Service account used to create the workflow"
 }
-*/
+
