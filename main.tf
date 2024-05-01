@@ -33,7 +33,7 @@ module "cloud_workflow" {
   service_account_email = var.service_account_email
   workflow_trigger = {
     cloud_scheduler = {
-      name                  = "workflow-job"
+      name                  = var.scheduler_name
       cron                  = "0 0 * * *"
       time_zone             = "America/New_York"
       deadline              = "320s"
