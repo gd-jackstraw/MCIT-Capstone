@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "bucket" {
-  name                        = var.name
+  name                        = var.name-${count.index}
   project                     = var.project_id
   location                    = var.location
   storage_class               = var.storage_class
