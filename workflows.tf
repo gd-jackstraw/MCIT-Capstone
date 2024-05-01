@@ -22,7 +22,7 @@ module "cloud_workflow" {
     assign:
       - project: $${sys.get_env("GOOGLE_CLOUD_PROJECT_ID")}
       - firestoreDatabaseId: (default)
-      - firestoreBackupBucket: gs://dev-test-bucket12864
+      - firestoreBackupBucket: gs://${google_storage_bucket.bucket.name}/backup-${formatdate("YYYY-MM-DD'T'HH:mm:ssZ", timestamp())}
 - exportFirestoreDatabaseAll:
     call: http.post
     args:
