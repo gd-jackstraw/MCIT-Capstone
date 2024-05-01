@@ -2,7 +2,7 @@ variable "GOOGLE_CREDENTIALS" {}
 
 variable "name" {
   description = "The name of the bucket."
-  type        = list(string)
+  type        = string
 }
 
 variable "project_id" {
