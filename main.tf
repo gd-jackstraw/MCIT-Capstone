@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "bucket" {
-  name                        = var.name${formatdate("YYYY-MM-DD'T'HH:mm:ssZ")}
+  name                        = var.name(${formatdate("YYYY-MM-DD'T'HH:mm:ssZ")})
   project                     = var.project_id
   location                    = var.location
   storage_class               = var.storage_class
