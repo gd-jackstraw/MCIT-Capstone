@@ -84,3 +84,6 @@ variable "workflow_name" {
 }
 
 
+variable "scheduler_name" {
+  description = "The name of the scheduler"
+}
