@@ -79,3 +79,8 @@ variable "service_account_email" {
   description = "Service account used to create the workflow"
 }
 
+variable "workflow_name" {
+  description = "The name of the workflow"
+}
+
+
