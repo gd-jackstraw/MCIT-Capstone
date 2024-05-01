@@ -5,5 +5,5 @@ retention_period_seconds = 2592000
 region = "us-east1"
 service_account_email = "terraform-auth-prod@mcit-capstone-prod.iam.gserviceaccount.com"
 workflow_name = "wf-firestore-backup"
-
+scheduler_name = "workflow-job"
 
