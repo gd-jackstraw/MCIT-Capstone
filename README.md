@@ -78,4 +78,5 @@ gcloud projects add-iam-policy-binding \
 
  This may be more permissions than required. A review of permissions granted may be in order to minimize excess permissions.
 
+Once the service account role bindings are added, the code can be deployed via HCP, formerly Terraform Cloud. 
  
