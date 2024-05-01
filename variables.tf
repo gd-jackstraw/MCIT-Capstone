@@ -3,6 +3,7 @@ variable "GOOGLE_CREDENTIALS" {}
 variable "name" {
   description = "The name of the bucket."
   type        = string
+  default = null
 }
 
 variable "project_id" {
