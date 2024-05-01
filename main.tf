@@ -28,7 +28,7 @@ module "cloud_workflow" {
 
   project_id = var.project_id
 
-  workflow_name         = "wf-firestore-backup"
+  workflow_name         = var.workflow_name
   region                = var.region
   service_account_email = var.service_account_email
   workflow_trigger = {
